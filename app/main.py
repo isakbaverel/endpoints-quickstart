@@ -17,6 +17,7 @@ import logging
 from flask import Flask
 from flask import request
 from airports import Airports
+import requests
 
 app = Flask(__name__)
 airport_util = Airports()
@@ -31,6 +32,13 @@ def airportName():
     if maybe_name is None:
       return 'IATA code not found : %s' % iata_code, 400
     return maybe_name, 200
+
+@app.route('/lambdaExample', methods=['GET'])
+def lambdaHelloWorld():
+    """"Call the lambda function"""
+    r = requests.get("https://us-central1-htmllambdatest.cloudfunctions.net/function-1").text
+    """Return the result"""
+    return r, 200
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)

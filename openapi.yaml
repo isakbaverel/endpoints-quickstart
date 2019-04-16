@@ -39,3 +39,13 @@ paths:
             type: string
         400:
           description: "The IATA code is invalid or missing."
+  "/lambdaExample":
+    get:
+      description: "Get the lambda result."
+      responses:
+        200:
+          description: "Success."
+          schema:
+            type: string
+        404:
+          description: "The lambda is closed."

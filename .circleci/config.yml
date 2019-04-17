@@ -9,6 +9,7 @@ jobs:
           command: |  # use pipenv to install dependencies
             sudo pip install pipenv
             pipenv install pytest
+            pipenv install flask
       - run:
           command: |  # use pipenv to install dependencies
             pipenv run pytest

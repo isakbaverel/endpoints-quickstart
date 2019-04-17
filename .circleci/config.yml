@@ -11,5 +11,6 @@ jobs:
             pipenv install pytest
             pipenv install -r app/requirements.txt
       - run:
-          command: |  # use pipenv to install dependencies
+          command: |
+            cd app
             pipenv run pytest

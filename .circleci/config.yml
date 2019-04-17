@@ -9,4 +9,6 @@ jobs:
           command: |  # use pipenv to install dependencies
             sudo pip install pipenv
             pipenv install pytest
-      - run: pytest
+      - run:
+          command: |  # use pipenv to install dependencies
+            pipenv run pytest

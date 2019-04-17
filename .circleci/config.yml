@@ -12,12 +12,12 @@ jobs:
             pipenv install -r app/requirements.txt
       - run:
           command: |
-            cd app
-            pipenv run pytest
-      - run:
-          command: |
             mkdir test-results
             cd test-results
             mkdir pytest
+      - run:
+          command: |
+            cd app
+            pipenv run pytest
       - store_test_results:
           path: test-results

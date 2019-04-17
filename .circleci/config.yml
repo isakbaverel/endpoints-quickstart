@@ -13,7 +13,11 @@ jobs:
       - run:
           command: |
             cd app
-            mkdir test-results
             pipenv run pytest
+      - run:
+          command: |
+            mkdir test-results
+            cd test-results
+            mkdir pytest
       - store_test_results:
           path: test-results
